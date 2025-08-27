@@ -1,0 +1,735 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comforty</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- google font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Owl Carousel CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+    <!-- Font Awesome for cart icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link  rel="stylesheet" href="style.css">
+</head>
+<body>
+<section id="navbar">
+<nav class="navbar bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand ps-lg-5 mx-auto mx-md-0 pb-2 pb-md-0"><strong>Comforty</strong></a>
+    <form class="d-flex" role="search">
+      <input class="form-control me-2 border border-black" type="search" placeholder="Search" aria-label="Search"/>
+      <button class="btn btn-outline-dark text-nowrap mx-3 w-75" type="button"><i class="fas fa-shopping-cart"></i> Cart</button>
+      <button class="btn btn-outline-dark me-3" type="button"><i class="fas fa-heart"></i></button>
+      <button class="btn btn-outline-dark" type="button"><i class="fas fa-user"></i></button>
+    </form>
+  </div>
+</nav>
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container-fluid">
+    <a href="#products"><button class="btn btn-outline-dark text-nowrap ms-lg-5 me-auto" type="submit"><i class="fas fa-bars"></i> All Categories</button></a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Shop</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#products">Product</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pages</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#testimonials">About</a>
+        </li>
+      </ul>
+      <span class="navbar-text text-black">
+        Contact: (808) 555-0111
+      </span>
+    </div>
+  </div>
+</nav>
+</section>
+<section id="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 mt-5 pt-5">
+                    <h4 class="mt-5 pt-5">WELCOME TO CHAIRY</h4>
+                    <h1 class="anton-regular">Best Furniture <br>Collection For Your<br> Interior</h1>
+                    <a href="#products"><button class="btn btn-info text-white">Shop Now <i class="fas fa-arrow-right"></i></button></a>
+                </div>
+                <div class="col-lg-6 position-relative">
+                    <div class="discount border bg-white rounded-circle">
+                            <h3 class="text-danger fw-bolder px-3 pt-2 text-center"> 54% </h3>
+                            <p class="px-3">Discount</p>
+                    </div>
+                    <img src="images/banner.png" alt="Furniture" class="img-fluid">
+                </div>
+            </div>
+            
+        </div>
+</section>
+<section id="featured-products">
+ <!-- Featured Product Section -->
+        <div class="mt-2 container">
+            <h3 class="fw-bold text-dark mb-4">Features Product</h3>
+            
+            <!-- Mobile Carousel (Small Screens) -->
+            <div class="featured-products-mobile">
+                <div class="owl-carousel owl-theme featured-carousel">
+                    <!-- Featured Product 1 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair1.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair2.jpg" class="card-img-top" alt="Wooden stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Wooden stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair3.jpg" class="card-img-top" alt="Fancy Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Fancy Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 4 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair4.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Grid (Large Screens) -->
+            <div class="featured-products-desktop">
+                <div class="row g-3">
+                    <!-- Featured Product 1 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair1.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair2.jpg" class="card-img-top" alt="Wooden stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Wooden stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair3.jpg" class="card-img-top" alt="Fancy Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Fancy Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 4 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair4.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<section id="products">
+<div class="container mt-5">
+        <!-- Header -->
+        <div class="text-center mb-4">
+            <h2 class="fw-bold text-dark">Our Product</h2>
+        </div>
+
+       <!-- Navigation Menu -->
+        <!-- Mobile Hamburger Menu Button -->
+        <div class="d-flex justify-content-start mb-4 d-md-none">
+            <button class="btn btn-outline-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#mobileNav" aria-expanded="false" aria-controls="mobileNav">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Navigation Menu -->
+        <div class="collapse d-md-none mb-4" id="mobileNav">
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a class="nav-link active fw-semibold text-primary px-3" href="#" data-filter="all">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="newest">Newest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="trending">Trending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="bestseller">Best Seller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#featured" data-filter="featured">Featured</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Desktop Navigation Menu -->
+        <div class="d-none d-md-flex justify-content-center mb-4">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active fw-semibold text-primary px-3" href="#" data-filter="all">All</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="newest">Newest</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="trending">Trending</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="bestseller">Best Seller</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link fw-semibold text-secondary px-3" href="#" data-filter="featured">Featured</a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Single Row - Owl Carousel (All 8 Products) -->
+        <div class="owl-carousel owl-theme main-product-carousel mb-5">
+            <!-- Product 1 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair7.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair-n5.jpg" class="card-img-top" alt="Wooden stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Wooden stool Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair-n6.jpg" class="card-img-top" alt="Fancy Stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Fancy Stool Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair4.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Product 5 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair-n1.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Modern Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 6 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair8.jpg" class="card-img-top" alt="Wooden stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Office Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 7 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair-n3.jpg" class="card-img-top" alt="Fancy Stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Designer Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 8 -->
+            <div class="item">
+                <div class="card border-0 shadow-sm h-100">
+                    <div class="position-relative">
+                        <img src="images/chair5.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                            <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                            <button class="btn btn-info btn-sm px-3 py-2">
+                                <i class="fas fa-shopping-cart text-white"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<section id="testimonials">
+        <!-- Testimonials Section -->
+        <section id="testimonials" class="bg-white py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 text-start mb-5">
+                        <h2 class="text-dark fw-semibold">What Our Clients Say About Us</h2>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-6 mb-5">
+                        <div class="bg-white p-4 shadow rounded-5">
+                            <p class="text-dark mb-0 lh-base">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="images/test-img4.png" alt="Williamson" class="rounded-circle me-3" width="55" height="55">
+                            <div>
+                                <h3 class="mb-1 fw-semibold text-dark">Williamson</h3>
+                                <small class="text-muted">Web developer</small>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="col-lg-6">
+                        <div class="bg-white p-4 shadow rounded-5">
+                            <p class="text-dark mb-0 lh-base">
+                                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                            </p>
+                        </div>
+                        
+                        <div class="d-flex align-items-center mt-3">
+                            <img src="images/test-img4.png" alt="Williamson" class="rounded-circle me-3" width="55" height="55">
+                            <div>
+                                <h3 class="mb-1 fw-semibold text-dark">Williamson</h3>
+                                <small class="text-muted">Web developer</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+</section>
+<section id="featured">
+        <!-- Featured Product Section -->
+        <div class="mt-2 container">
+            <h3 class="fw-bold text-dark mb-4">Features Product</h3>
+            
+            <!-- Mobile Carousel (Small Screens) -->
+            <div class="featured-products-mobile">
+                <div class="owl-carousel owl-theme featured-carousel">
+                    <!-- Featured Product 1 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair1.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair2.jpg" class="card-img-top" alt="Wooden stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Wooden stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair3.jpg" class="card-img-top" alt="Fancy Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Fancy Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 4 -->
+                    <div class="item">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair4.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desktop Grid (Large Screens) -->
+            <div class="featured-products-desktop">
+                <div class="row g-3">
+                    <!-- Featured Product 1 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair1.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 2 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair2.jpg" class="card-img-top" alt="Wooden stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Wooden stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 3 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair3.jpg" class="card-img-top" alt="Fancy Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Fancy Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Featured Product 4 -->
+                    <div class="col-12 col-sm-6 col-lg-3">
+                        <div class="card border-1 border-light shadow-sm h-100">
+                            <div class="position-relative">
+                                <img src="images/chair4.jpg" class="card-img-top" alt="Library Stool Chair" style="height: 250px; object-fit: cover;">
+                            </div>
+                            <div class="card-body d-flex flex-column">
+                                <h5 class="card-title fw-bold text-dark mb-3">Library Stool Chair</h5>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 fw-bold text-dark mb-0">$ 40</span>
+                                    <button class="btn btn-info btn-sm px-3 py-2">
+                                        <i class="fas fa-shopping-cart text-white"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    <!-- Footer Section -->
+    <footer class="bg-light mt-5 pt-5 ">
+        <div class="container">
+            <div class="row">
+                <!-- Chairy Column -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h5 class="fw-bold text-dark mb-3">Chairy</h5>
+                    <p class="text-muted mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente iste facilis cum, inventore recusandae doloremque animi officia</p>
+                    <div class="d-flex gap-2">
+                        <a href="#" class="text-muted fs-5"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-muted fs-5"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+
+                <!-- Category Column -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h5 class="fw-bold text-dark mb-3">Category</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Sofa</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Armchair</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Wing chair</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Desk chair</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Wooden chair</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Park bench</a></li>
+                    </ul>
+                </div>
+
+                <!-- Support Column -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h5 class="fw-bold text-dark mb-3">Support</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Help & Support</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Terms & Condition</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Privacy Policy</a></li>
+                        <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Help</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter Column -->
+                <div class="col-12 col-md-6 col-lg-3 mb-4">
+                    <h5 class="fw-bold text-dark mb-3">News Letter</h5>
+                    <div class="mb-3">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Your Email" aria-label="Email">
+                            <button class="btn btn-info text-white" type="button">Subscribe</button>
+                        </div>
+                    </div>
+                    <p class="text-muted small">Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis odio totam harum sequi maxime earum eius</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copyright Footer -->
+        <div class="bg-info text-white py-3 mt-4">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12 col-md-6">
+                        <span>© Copyright All Rights Reserved</span>
+                    </div>
+                    <div class="col-12 col-md-6 text-md-end">
+                        <span>This site by Ayesha Shaikh & Arshi Shaikh</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
