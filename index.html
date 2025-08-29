@@ -21,42 +21,52 @@
 </head>
 <body>
 <section id="navbar">
-<nav class="navbar bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand ps-lg-5 mx-auto mx-md-0 pb-2 pb-md-0"><strong>Comforty</strong></a>
-    <form class="d-flex" role="search">
-      <input class="form-control me-2 border border-black" type="search" placeholder="Search" aria-label="Search"/>
-      <button class="btn btn-outline-dark text-nowrap mx-3 w-75" type="button"><i class="fas fa-shopping-cart"></i> Cart</button>
-      <button class="btn btn-outline-dark me-3" type="button"><i class="fas fa-heart"></i></button>
-      <button class="btn btn-outline-dark" type="button"><i class="fas fa-user"></i></button>
-    </form>
-  </div>
-</nav>
+<!-- Navbar -->
+    <nav class="navbar bg-body-tertiary">
+        <div class="container-fluid">
+          <a class="navbar-brand ms-5"><strong id="brandName">Comforty</strong></a>
+          <form class="d-flex" role="search">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-dark ms-3 w-75" type="submit"><i class="fas fa-shopping-cart"></i> <span id="cartBtn">Cart</span></button>
+            <button class="btn btn-outline-dark ms-3" type="submit"><i class="fas fa-heart"></i></button>
+            <button class="btn btn-outline-dark ms-3" type="submit"><i class="fas fa-user-alt"></i></button>
+            <!-- Language Dropdown -->
+            <select id="languageSelect" class="form-select form-select-sm lang-select ms-3">
+              <option value="en">English</option>
+              <option value="fr">Français</option>
+              <option value="es">Español</option>
+            </select>
+          </form>
+        </div>
+      </nav>
 <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a href="#products"><button class="btn btn-outline-dark text-nowrap ms-lg-5 me-auto" type="submit"><i class="fas fa-bars"></i> All Categories</button></a>
+    <a href="#products"><button class="btn btn-outline-dark text-nowrap ms-lg-5 me-auto" type="submit"><i class="fas fa-bars"></i> <span id="allCategories">All Categories</span></button></a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active ms-lg-2" aria-current="page" href="#">Home</a>
+          <a class="nav-link active ms-lg-2" aria-current="page" href="#" id="navHome">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#products">Shop</a>
+          <a class="nav-link" href="#products" id="navShop">Shop</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#products">Product</a>
+          <a class="nav-link" href="#products" id="navProduct">Product</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Pages</a>
+          <a class="nav-link" href="#" id="navPages">Pages</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#testimonials">About</a>
+          <a class="nav-link" href="#testimonials" id="navAbout">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="vcp.html">AI Virtual Chair Placement</a>
         </li>
       </ul>
-      <span class="navbar-text text-black">
+      <span class="navbar-text text-black" id="contactTxt">
         Contact: (808) 555-0111
       </span>
     </div>
@@ -67,14 +77,14 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 mt-5 pt-5">
-                    <h4 class="mt-5 pt-5">WELCOME TO CHAIRY</h4>
-                    <h1 class="anton-regular">Best Furniture <br>Collection For Your<br> Interior</h1>
-                    <a href="#products"><button class="btn btn-info text-white">Shop Now <i class="fas fa-arrow-right"></i></button></a>
+                    <h4 class="mt-5 pt-5" id="welcomeText">WELCOME TO CHAIRY</h4>
+                    <h1 class="anton-regular" id="heroTitle">Best Furniture <br>Collection For Your<br> Interior</h1>
+                    <a href="#products"><button class="btn btn-info text-white" id="shopNowBtn">Shop Now <i class="fas fa-arrow-right"></i></button></a>
                 </div>
                 <div class="col-lg-6 position-relative">
                     <div class="discount border bg-white rounded-circle">
                             <h3 class="text-danger fw-bolder px-3 pt-2 text-center"> 54% </h3>
-                            <p class="px-3">Discount</p>
+                            <p class="px-3" id="discountTxt">Discount</p>
                     </div>
                     <img src="images/banner.png" alt="Furniture" class="img-fluid">
                 </div>
@@ -452,7 +462,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 text-start mb-5">
-                        <h2 class="text-dark fw-semibold">What Our Clients Say About Us</h2>
+                        <h2 class="text-dark fw-semibold" id="clientHeading">What Our Clients Say About Us</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -652,14 +662,27 @@
         </div>
     </div>
 </section>
+ <!-- Chatbot Button -->
+<button id="chatButton" class="btn btn-primary sm-shadow" onclick="toggleChat()">Chat with us</button>
+
+<!-- Chatbot UI -->
+<div id="chatbot" class="chatbot-card">
+  <div class="chatbot-header">AI Support Chat Bot</div>
+  <div class="chatbot-body" id="chatlog"></div>
+  <div class="chatbot-footer">
+    <input type="text" id="userInput" class="chatbot-input" placeholder="Type a message..." 
+           onkeydown="if(event.key==='Enter'){sendMessage()}">
+  </div>
+</div>
+
     <!-- Footer Section -->
     <footer class="bg-light mt-5 pt-5 ">
         <div class="container">
             <div class="row">
                 <!-- Chairy Column -->
                 <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h5 class="fw-bold text-dark mb-3">Chairy</h5>
-                    <p class="text-muted mb-3">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente iste facilis cum, inventore recusandae doloremque animi officia</p>
+                    <h5 class="fw-bold text-dark mb-3" id="footerBrand">Chairy</h5>
+                    <p class="text-muted mb-3" id="footerDesc">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Modi sapiente iste facilis cum, inventore recusandae doloremque animi officia</p>
                     <div class="d-flex gap-2">
                         <a href="#" class="text-muted fs-5"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-muted fs-5"><i class="fab fa-instagram"></i></a>
@@ -671,7 +694,7 @@
 
                 <!-- Category Column -->
                 <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h5 class="fw-bold text-dark mb-3">Category</h5>
+                    <h5 class="fw-bold text-dark mb-3" id="footerCat">Category</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Sofa</a></li>
                         <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Armchair</a></li>
@@ -684,7 +707,7 @@
 
                 <!-- Support Column -->
                 <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h5 class="fw-bold text-dark mb-3">Support</h5>
+                    <h5 class="fw-bold text-dark mb-3" id="footerSupport">Support</h5>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Help & Support</a></li>
                         <li class="mb-2"><a href="#" class="text-muted text-decoration-none">Terms & Condition</a></li>
@@ -695,7 +718,7 @@
 
                 <!-- Newsletter Column -->
                 <div class="col-12 col-md-6 col-lg-3 mb-4">
-                    <h5 class="fw-bold text-dark mb-3">News Letter</h5>
+                    <h5 class="fw-bold text-dark mb-3" id="footerNewsletter">News Letter</h5>
                     <div class="mb-3">
                         <div class="input-group">
                             <input type="email" class="form-control" placeholder="Your Email" aria-label="Email">
@@ -712,10 +735,10 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12 col-md-6">
-                        <span>© Copyright All Rights Reserved</span>
+                        <span id="copyTxt">© Copyright All Rights Reserved</span>
                     </div>
                     <div class="col-12 col-md-6 text-md-end">
-                        <span>This site by Ayesha Shaikh & Arshi Shaikh</span>
+                        <span id="byTxt">This site by Ayesha Shaikh & Arshi Shaikh</span>
                     </div>
                 </div>
             </div>

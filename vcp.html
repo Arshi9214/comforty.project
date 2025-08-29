@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Chair Placement</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <style>
+    body {
+      background: #f8f9fa;
+      margin: 0;
+      padding: 0;
+    }
+    .container-fluid {
+      height: 100vh;
+    }
+    .main-area {
+      margin-top: 0;
+      position: relative;
+      width: 100%;
+      height: 80vh;
+      border: 2px solid #ccc;
+      border-radius: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+    }
+    img#chairImage {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 200px;
+      cursor: grab;
+      display: none;
+    }
+    .chair-list img {
+      width: 80%;
+      cursor: pointer;
+      border: 2px solid transparent;
+      margin: 10px 0;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    .chair-list img:hover {
+      border: 2px solid #007bff;
+    }
+  </style>
+</head>
+<body>
+<div class="container-fluid">
+  <div class="row h-100">
+    <!-- Main Background + Chair -->
+    <div class="col-md-9 d-flex justify-content-center align-items-center">
+      <div class="main-area" id="mainArea">
+        <video id="camera" autoplay playsinline></video>
+        <canvas id="canvas" style="display:none;"></canvas>
+        <img id="chairImage" alt="Chair">
+      </div>
+    </div>
+
+    <!-- Chair Thumbnails -->
+    <div class="col-md-3 chair-list d-flex flex-column align-items-center justify-content-center">
+      <img src="images/chair2-removebg-preview.png" onclick="selectChair(this.src)">
+      <img src="images/chair3-removebg-preview.png" onclick="selectChair(this.src)">
+      <img src="images/chair4-removebg-preview.png" onclick="selectChair(this.src)">
+    </div>
+  </div>
+
+  <!-- Buttons -->
+  <div class="text-center mt-5">
+    <button class="btn btn-primary" onclick="startCamera()">Start Camera</button>
+    <button class="btn btn-success" onclick="captureBackground()">Capture Background</button>
+    <button class="btn btn-danger" onclick="stopCamera()">Stop Camera</button>
+    <button class="btn btn-warning" onclick="downloadImage()">Download</button>
+  </div>
+</div>
+
+<!-- Interact.js for drag & resize -->
+<script src="https://cdn.jsdelivr.net/npm/interactjs/dist/interact.min.js"></script>
+
+<script>
+  const video = document.getElementById('camera');
+  const canvas = document.getElementById('canvas');
+  const mainArea = document.getElementById('mainArea');
+  const chairImage = document.getElementById('chairImage');
+  let stream;
+  let capturedBackground = null;
+
+  // Start camera
+  async function startCamera() {
+    try {
+      stream = await navigator.mediaDevices.getUserMedia({ video: true, audio: false });
+      video.style.display = "block";
+      video.srcObject = stream;
+    } catch (err) {
+      alert("Error: " + err.message);
+    }
+  }
+
+  // Capture background from camera
+  function captureBackground() {
+    if (!stream) return alert("Camera not started!");
+
+    const context = canvas.getContext('2d');
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+
+    capturedBackground = canvas.toDataURL("image/png");
+    mainArea.style.backgroundImage = `url('${capturedBackground}')`;
+
+    video.style.display = "none"; // hide live feed
+  }
+
+  // Stop camera
+  function stopCamera() {
+    if (stream) {
+      stream.getTracks().forEach(track => track.stop());
+      video.srcObject = null;
+    }
+    video.style.display = "none";
+  }
+
+  // Select chair image to overlay
+  function selectChair(src) {
+    chairImage.src = src;
+    chairImage.style.display = "block";
+  }
+
+  // Download final composition
+  function downloadImage() {
+    if (!capturedBackground) {
+      alert("Please capture a background first!");
+      return;
+    }
+
+    const downloadCanvas = document.createElement("canvas");
+    const ctx = downloadCanvas.getContext("2d");
+
+    // use captured background size
+    const bg = new Image();
+    bg.src = capturedBackground;
+
+    bg.onload = () => {
+      downloadCanvas.width = bg.width;
+      downloadCanvas.height = bg.height;
+
+      // draw background
+      ctx.drawImage(bg, 0, 0);
+
+      // draw chair if selected
+      if (chairImage.style.display !== "none") {
+        const chair = new Image();
+        chair.src = chairImage.src;
+
+        chair.onload = () => {
+          const scaleX = chairImage.width / chair.width;
+          const scaleY = chairImage.height / chair.height;
+
+          const x = parseFloat(chairImage.getAttribute('data-x')) || 0;
+          const y = parseFloat(chairImage.getAttribute('data-y')) || 0;
+
+          // place chair in same relative position
+          ctx.drawImage(
+            chair,
+            (bg.width / mainArea.clientWidth) * (chairImage.offsetLeft + x),
+            (bg.height / mainArea.clientHeight) * (chairImage.offsetTop + y),
+            chair.width * scaleX,
+            chair.height * scaleY
+          );
+          
+          // trigger download
+          const link = document.createElement("a");
+          link.href = downloadCanvas.toDataURL("image/png");
+          link.download = "room_with_chair.png";
+          link.click();
+        };
+      } else {
+        // only background
+        const link = document.createElement("a");
+        link.href = downloadCanvas.toDataURL("image/png");
+        link.download = "room.png";
+        link.click();
+      }
+    };
+  }
+
+  // Make chair image draggable and resizable
+  interact('#chairImage')
+    .draggable({
+      listeners: {
+        move(event) {
+          const target = event.target;
+          const x = (parseFloat(target.getAttribute('data-x')) || 0) + event.dx;
+          const y = (parseFloat(target.getAttribute('data-y')) || 0) + event.dy;
+
+          target.style.transform = `translate(${x}px, ${y}px)`;
+          target.setAttribute('data-x', x);
+          target.setAttribute('data-y', y);
+        }
+      }
+    })
+    .resizable({
+      edges: { left: true, right: true, bottom: true, top: true }
+    })
+    .on('resizemove', event => {
+      let { x, y } = event.target.dataset;
+
+      x = (parseFloat(x) || 0) + event.deltaRect.left;
+      y = (parseFloat(y) || 0) + event.deltaRect.top;
+
+      Object.assign(event.target.style, {
+        width: `${event.rect.width}px`,
+        height: `${event.rect.height}px`,
+        transform: `translate(${x}px, ${y}px)`
+      });
+
+      Object.assign(event.target.dataset, { x, y });
+    });
+</script>
+</body>
+</html>
